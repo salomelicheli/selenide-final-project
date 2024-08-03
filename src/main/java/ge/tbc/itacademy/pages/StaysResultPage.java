@@ -12,11 +12,9 @@ public class StaysResultPage {
             hotelRatings = $$(byAttribute("data-testid", "rating-stars")),
             prices = $$(byAttribute("data-testid", "price-and-discounted-price")),
             distanceInfo = $$(byAttribute("data-testid", "distance")),
-            hotelReviewScores = $$x("//div[@data-testid='review-score']/div[1]"),
-            allDeals = $$x("//div[@data-testid=\"property-card\"]");
+            hotelReviewScores = $$x("//div[@data-testid='review-score']/div[1]");
     public SelenideElement
             hotelOffer = $(byAttribute("data-testid", "title")),
             hotelAvailabilityButton = $("div[aria-label='Property'] a[data-testid='availability-cta-btn']"),
-            header = $("#hotel_header"),
-            nightAmountContainer = $x("//div[@data-testid=\"price-for-x-nights\"]");
+            header = $("#hotel_header");
 }
