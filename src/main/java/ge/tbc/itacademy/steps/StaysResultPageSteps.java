@@ -9,6 +9,7 @@ import org.testng.asserts.SoftAssert;
 import static com.codeborne.selenide.Condition.matchText;
 import static com.codeborne.selenide.Selectors.byTagName;
 import static ge.tbc.itacademy.util.HelperFunctions.*;
+import static org.apache.commons.lang.StringUtils.substringBeforeLast;
 import static org.apache.commons.lang3.StringUtils.substringAfterLast;
 
 public class StaysResultPageSteps {
@@ -68,7 +69,7 @@ public class StaysResultPageSteps {
     @Step("Validate hotel review scores are at least {0}")
     public StaysResultPageSteps validateHotelReviewScores(double expectedLowestReviewScore) {
         staysPage.hotelReviewScores.forEach(x ->
-                sfa.assertTrue(Double.parseDouble(substringAfterLast(x.getText(), " ")) >= expectedLowestReviewScore));
+                sfa.assertTrue(Double.parseDouble(substringAfterLast(x.innerText(), " ")) >= expectedLowestReviewScore));
         return this;
     }
 }
